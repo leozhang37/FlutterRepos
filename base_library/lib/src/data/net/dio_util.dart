@@ -174,8 +174,8 @@ class DioUtil {
     int _code;
     String _msg;
     T _data;
-    if (response.statusCode == HttpStatus.ok ||
-        response.statusCode == HttpStatus.created) {
+    //if (response.statusCode == HttpStatus.ok ||
+      //  response.statusCode == HttpStatus.created) {
       try {
         if (response.data is Map) {
           _status = (response.data[_statusKey] is int)
@@ -205,7 +205,7 @@ class DioUtil {
           type: DioErrorType.RESPONSE,
         ));
       }
-    }
+    //}
     return new Future.error(new DioError(
       response: response,
       message: "statusCode: $response.statusCode, service error",
